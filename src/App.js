@@ -1,14 +1,14 @@
 import './styles/App.css';
 
+import { useEffect, useRef, useState } from 'react';
+
 import Elevator from './components/Elevator'
-import logo from './logo.svg';
 
 function App() {
+
   return (
     <div className="App">
-      <Elevator>
-        
-      </Elevator>
+      <Elevator/>     
     </div>
   );
 }
