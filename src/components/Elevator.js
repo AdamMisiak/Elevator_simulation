@@ -5,8 +5,10 @@ import React from 'react';
 const Elevator = ({}) => {
     
     return(
-        <div className="elevator">
-            
+        <div className="elevator-container">
+            <div className="elevator">
+
+            </div>
         </div>
 
     )   

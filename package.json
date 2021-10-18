@@ -1,5 +1,5 @@
 {
-  "name": "elevator_simulator",
+  "name": "elevator_simulation",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
