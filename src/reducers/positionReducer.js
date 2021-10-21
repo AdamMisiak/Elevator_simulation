@@ -1,7 +1,7 @@
 import { SAVE_POSITION } from '../actions/types';
 
 const initialState = {
-    position: 100,
+    position: 0,
     data: {}
 };
 
@@ -10,7 +10,7 @@ const positionReducer = (state = initialState, action) => {
         case SAVE_POSITION:
             return {
                 ...state,
-                position: action.payload.position,
+                position: action.payload,
             };
         default:
             return state;
