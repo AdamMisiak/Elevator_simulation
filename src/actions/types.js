@@ -1,1 +1,1 @@
-export const CHANGE_POSITION = 'CHANGE_POSITION';
+export const SAVE_POSITION = 'SAVE_POSITION';

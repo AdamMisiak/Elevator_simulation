@@ -1,4 +1,4 @@
-import { CHANGE_POSITION } from '../actions/types';
+import { SAVE_POSITION } from '../actions/types';
 
 const initialState = {
     items: [],
