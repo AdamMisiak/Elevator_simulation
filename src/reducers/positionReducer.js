@@ -2,13 +2,12 @@ import { SAVE_POSITION } from '../actions/types';
 
 const initialState = {
     position: 0,
-    data: {}
 };
 
 const positionReducer = (state = initialState, action) => {
     switch (action.type) {
         case SAVE_POSITION:
-            return {
+                return {
                 ...state,
                 position: action.payload,
             };

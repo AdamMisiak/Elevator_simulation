@@ -4,7 +4,7 @@ import rootReducer from './reducers'
 import thunk from 'redux-thunk';
 
 const initialState = {
-    position: 0
+    position: 100
 };
 
 const middleware = [thunk];

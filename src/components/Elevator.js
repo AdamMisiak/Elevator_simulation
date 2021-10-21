@@ -9,16 +9,21 @@ import { savePosition } from '../actions/savePosition';
 const Elevator = () => {
     const [y, setY] = useState(100);
     const ref = useRef(null)
-    
+
+    let position = useSelector(state => state.position.position);
+    console.log(position)
     const dispatch = useDispatch();
 
     function handleKeyPress(e){
         if (e.key === 'ArrowUp') {
             setY(y => y - 2);
-            dispatch(savePosition(y));
+            position = position + 2;
+            dispatch(savePosition(position));
         }
         if (e.key === 'ArrowDown') {
             setY(y => y + 2);
+            position = position - 2;
+            dispatch(savePosition(position));
         }
     }
 
@@ -30,7 +35,8 @@ const Elevator = () => {
         <div className="elevator-container">
             <div ref={ref} className="elevator" style={{top : y+'px'}}>
                 ELEVATOR
-                <p>{y}</p>
+                <p>HOOKS {y}</p>
+                <p>REDUX {position}</p>
             </div>
         </div>
 
