@@ -1,14 +1,19 @@
 import { SAVE_POSITION } from '../actions/types';
 
 const initialState = {
-    items: [],
-    item: {}
+    position: 100,
+    data: {}
 };
 
-export default function(state = initialState, action) {
-    switch(action.type) {
-        default: 
+const positionReducer = (state = initialState, action) => {
+    switch (action.type) {
+        case SAVE_POSITION:
+            return {
+                ...state,
+                position: action.payload.position,
+            };
+        default:
             return state;
     }
-
 }
+export default positionReducer;
