@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
-import positionReducer from './positionReducer';
+import savePosition from './savePosition';
 
 export default combineReducers({
-    position: positionReducer
+    position: savePosition
 })

@@ -1,1 +1,2 @@
 export const SAVE_POSITION = 'SAVE_POSITION';
+export const ORDER_ELEVATOR = 'ORDER_ELEVATOR';

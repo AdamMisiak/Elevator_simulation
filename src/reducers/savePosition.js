@@ -4,7 +4,7 @@ const initialState = {
     position: 0,
 };
 
-const positionReducer = (state = initialState, action) => {
+const savePosition = (state = initialState, action) => {
     switch (action.type) {
         case SAVE_POSITION:
                 return {
@@ -15,4 +15,4 @@ const positionReducer = (state = initialState, action) => {
             return state;
     }
 }
-export default positionReducer;
+export default savePosition;
