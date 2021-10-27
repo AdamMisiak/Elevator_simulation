@@ -25,14 +25,14 @@ const Elevator = () => {
 
     useEffect(()=>{
         document.addEventListener("keydown", handleKeyPress);
-    })
-    
-    // }, [])
+    }, []);
     
     return(
-        <div ref={ref} className="elevator" style={{top : position.position+'px'}}>
-            ELEVATOR
-            <p>REDUX {position.position}</p>
+        <div className="elevator-container">
+            <div ref={ref} className="elevator" style={{top : position.position+'px'}}>
+                ELEVATOR
+                <p>REDUX {position.position}</p>
+            </div>
         </div>
 
     )   

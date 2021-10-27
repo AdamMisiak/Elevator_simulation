@@ -7,8 +7,9 @@ import React from 'react';
 const Building = () => {
     return(
         <div className="building">
-            <Elevator/>     
-            {/* <Level/>      */}
+            TEST
+            {/* <Elevator/>      */}
+            <Level/>     
             {/* <Level/> */}
         </div>
 

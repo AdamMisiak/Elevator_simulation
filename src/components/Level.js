@@ -6,6 +6,7 @@ const Level = () => {
     return(
         <div className="level-container">
             <div className="level">
+                LEVEL
             </div>
         </div>
 
