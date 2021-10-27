@@ -29,9 +29,9 @@ const Elevator = () => {
     
     return(
         <div className="elevator-container">
-            <div ref={ref} className="elevator" style={{top : position.position+'px'}}>
+            <div ref={ref} className="elevator" style={{top : position+'px'}}>
                 ELEVATOR
-                <p>REDUX {position.position}</p>
+                <p>REDUX {position}</p>
             </div>
         </div>
 
