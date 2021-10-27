@@ -1,7 +1,7 @@
 import '../styles/Elevator.css';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 
 import React from 'react';
 import { savePosition } from '../actions/savePosition';
@@ -25,14 +25,14 @@ const Elevator = () => {
 
     useEffect(()=>{
         document.addEventListener("keydown", handleKeyPress);
-      }, [])
+    })
+    
+    // }, [])
     
     return(
-        <div className="elevator-container">
-            <div ref={ref} className="elevator" style={{top : position.position+'px'}}>
-                ELEVATOR
-                <p>REDUX {position.position}</p>
-            </div>
+        <div ref={ref} className="elevator" style={{top : position.position+'px'}}>
+            ELEVATOR
+            <p>REDUX {position.position}</p>
         </div>
 
     )   
