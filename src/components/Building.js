@@ -9,7 +9,7 @@ const Building = () => {
         <div className="building">
             TEST
             {/* <Elevator/>      */}
-            <Level/>     
+            {/* <Level/>      */}
             {/* <Level/> */}
         </div>
 

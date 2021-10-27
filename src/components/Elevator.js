@@ -3,6 +3,7 @@ import '../styles/Elevator.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useRef } from 'react';
 
+import Level from './Level'
 import React from 'react';
 import { savePosition } from '../actions/savePosition';
 
@@ -13,12 +14,15 @@ const Elevator = () => {
     let position = useSelector(state => state.position);
 
     function handleKeyPress(e){
-        if (e.key === 'ArrowUp') {
+        if (e.key === 'ArrowUp' && position > 2) {
             position = position - 2;
             dispatch(savePosition(position));
         }
-        if (e.key === 'ArrowDown') {
+        else if (e.key === 'ArrowDown') {
             position = position + 2;
+            dispatch(savePosition(position));
+        }
+        else {
             dispatch(savePosition(position));
         }
     }
@@ -33,6 +37,7 @@ const Elevator = () => {
                 ELEVATOR
                 <p>REDUX {position}</p>
             </div>
+            <Level />
         </div>
 
     )   
