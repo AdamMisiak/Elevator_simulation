@@ -29,7 +29,7 @@ const Elevator = () => {
 
     useEffect(()=>{
         document.addEventListener("keydown", handleKeyPress);
-    }, []);
+    });
     
     return(
         <div className="elevator-container">
@@ -37,7 +37,10 @@ const Elevator = () => {
                 ELEVATOR
                 <p>REDUX {position}</p>
             </div>
-            <Level />
+            <div className="levels">
+                <Level />
+                <Level />
+            </div>
         </div>
 
     )   
