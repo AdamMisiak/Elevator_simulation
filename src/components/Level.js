@@ -8,9 +8,9 @@ const Level = () => {
         <div className="level-container">
             <div className="level">
                 LEVEL
-                <Button 
+                {/* <Button 
                     label="Order"
-                />
+                /> */}
             </div>
         </div>
 

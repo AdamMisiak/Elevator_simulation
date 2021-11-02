@@ -23,7 +23,7 @@
 
 .level {
     background-color: rgb(214, 209, 209);
-    width: 200px;
+    /* width: 200px; */
     height: 200px;
     z-index: 2;
 
