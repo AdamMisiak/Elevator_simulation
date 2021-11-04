@@ -5,14 +5,13 @@ import { orderElevator } from '../actions/orderElevator';
 import { useDispatch } from 'react-redux';
 
 const Button = ({
-    label
+    label,
+    level,
 }) => {
     const dispatch = useDispatch();
     
     function HandleOrderElevator(e){
-        console.log(e)
-        console.log('ORDER ELEVATOR')
-        dispatch(orderElevator(1));
+        dispatch(orderElevator(level));
 
     }
 

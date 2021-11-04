@@ -10,6 +10,7 @@ const Level = (object) => {
                 LEVEL: {object.id}
                 <Button 
                     label="Order"
+                    level={object.id}
                 />
             </div>
         </div>

@@ -16,7 +16,10 @@ const Elevator = () => {
         },
         {
             "id": 2,
-        }
+        },
+        {
+            "id": 3,
+        },
     ]
 
     let position = useSelector(state => state.position);
@@ -46,7 +49,7 @@ const Elevator = () => {
                 <p>REDUX {position}</p>
             </div>
             <div className="levels">
-                {levelsObjects.map((object) => {
+                {levelsObjects.slice(0).reverse().map((object) => {
                     return <Level key={object.id} {...object} />
                 })}
             </div>
