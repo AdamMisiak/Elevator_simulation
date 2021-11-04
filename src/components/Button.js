@@ -12,7 +12,6 @@ const Button = ({
     
     function HandleOrderElevator(e){
         dispatch(orderElevator(level));
-
     }
 
     return(
