@@ -1,17 +1,20 @@
 import '../styles/Button.css';
 
+import { useDispatch, useSelector } from 'react-redux';
+
 import React from 'react';
 import { orderElevator } from '../actions/orderElevator';
-import { useDispatch } from 'react-redux';
 
 const Button = ({
     label,
     level,
 }) => {
     const dispatch = useDispatch();
+
+    let queue = useSelector(state => state.queue);
     
     function HandleOrderElevator(e){
-        dispatch(orderElevator(level));
+        dispatch(orderElevator(level, queue));
     }
 
     return(

@@ -1,15 +1,15 @@
 import { ORDER_ELEVATOR } from '../actions/types';
 
 const initialState = {
-    level: 0,
+    queue: [],
 };
-
 const orderElevator = (state = initialState, action) => {
     switch (action.type) {
         case ORDER_ELEVATOR:
-            return action.payload
+            const { level, queue } = action.payload;
+            return [...queue, level]
         default:
-            return state;
+            return state.queue;
     }
 }
 export default orderElevator;

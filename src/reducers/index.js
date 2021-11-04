@@ -4,5 +4,5 @@ import savePosition from './savePosition';
 
 export default combineReducers({
     position: savePosition,
-    order: orderElevator,
+    queue: orderElevator,
 })
