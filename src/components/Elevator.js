@@ -10,6 +10,14 @@ import { savePosition } from '../actions/savePosition';
 const Elevator = () => {
     const dispatch = useDispatch();
     const ref = useRef(null)
+    const levelsObjects = [
+        {
+            "id": 1,
+        },
+        {
+            "id": 2,
+        }
+    ]
 
     let position = useSelector(state => state.position);
 
@@ -38,8 +46,9 @@ const Elevator = () => {
                 <p>REDUX {position}</p>
             </div>
             <div className="levels">
-                <Level />
-                <Level />
+                {levelsObjects.map((object) => {
+                    return <Level key={object.id} {...object} />
+                })}
             </div>
         </div>
 

@@ -3,11 +3,11 @@ import '../styles/Level.css';
 import Button from './Button'
 import React from 'react';
 
-const Level = () => {    
+const Level = (object) => { 
     return(
         <div className="level-container">
             <div className="level">
-                LEVEL
+                LEVEL: {object.id}
                 <Button 
                     label="Order"
                 />
