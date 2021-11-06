@@ -21,7 +21,7 @@ const Elevator = () => {
             "id": 3,
         },
     ]
-
+    
     let position = useSelector(state => state.position);
 
     function handleKeyPress(e){
@@ -44,10 +44,14 @@ const Elevator = () => {
 
     useEffect(()=>{
         // moving elevator will be here - if order is level 1 and position > level 1 => move down
-        if (position > 0) {
-            position = position - 2
-            dispatch(savePosition(position));
-        }
+        // if (position > 0) {
+        //     position = position - 2
+        //     dispatch(savePosition(position));
+        // }
+        // else if (position < 1000) {
+        //     position = position + 2
+        //     dispatch(savePosition(position));
+        // }
     });
     
     return(
