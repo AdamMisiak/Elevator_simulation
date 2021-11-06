@@ -7,10 +7,7 @@ const orderElevatorReducer = (state = initialState, action) => {
     switch (action.type) {
         case ORDER_ELEVATOR:
             const { level, queue } = action.payload;
-            return {
-                ...state,
-                queue: [...queue, level]
-            }
+            return [...queue, level]
         default:
             return state.queue;
     }

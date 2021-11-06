@@ -41,6 +41,14 @@ const Elevator = () => {
     useEffect(()=>{
         document.addEventListener("keydown", handleKeyPress);
     });
+
+    useEffect(()=>{
+        // moving elevator will be here - if order is level 1 and position > level 1 => move down
+        if (position > 0) {
+            position = position - 2
+            dispatch(savePosition(position));
+        }
+    });
     
     return(
         <div className="elevator-container">

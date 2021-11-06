@@ -11,7 +11,7 @@ const Level = (object) => {
 
     if (ref.current !== null) {
         // setPosition(ref.current.getBoundingClientRect().top)
-        console.log(ref.current.getBoundingClientRect().top)
+        // console.log(ref.current.getBoundingClientRect().top)
     }
 
     return(
