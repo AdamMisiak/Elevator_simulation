@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import orderElevator from './orderElevator';
-import savePosition from './savePosition';
+import orderElevatorReducer from './orderElevator';
+import savePositionReducer from './savePosition';
 
 export default combineReducers({
-    position: savePosition,
-    queue: orderElevator,
+    position: savePositionReducer,
+    // queue: orderElevatorReducer,
 })
