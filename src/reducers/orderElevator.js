@@ -3,6 +3,7 @@ import { ORDER_ELEVATOR } from '../actions/types';
 const initialState = {
     queue: [],
 };
+
 const orderElevatorReducer = (state = initialState, action) => {
     switch (action.type) {
         case ORDER_ELEVATOR:

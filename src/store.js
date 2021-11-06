@@ -5,6 +5,7 @@ import thunk from 'redux-thunk';
 
 const initialState = {
     position: 100,
+    levels: [],
 };
 
 const middleware = [thunk];
