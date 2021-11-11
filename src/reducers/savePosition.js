@@ -7,7 +7,10 @@ const initialState = {
 const savePositionReducer = (state = initialState, action) => {
     switch (action.type) {
         case SAVE_POSITION:
-            return action.payload
+            return {
+                ...state,
+                position: action.payload
+            }
         default:
             return state;
     }
