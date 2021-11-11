@@ -6,10 +6,3 @@ export const savePosition = (position) => {
         payload: position
     }
 }
-
-// export const savePositionSuccess = position => {
-//     return {
-//         type: SAVE_POSITION,
-//         payload: position
-//     }
-// }

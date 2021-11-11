@@ -11,7 +11,7 @@ const Button = ({
 }) => {
     const dispatch = useDispatch();
 
-    let queue = useSelector(state => state.queue);
+    let queue = useSelector(state => state.levels.queue);
     
     function HandleOrderElevator(e){
         dispatch(orderElevator(level, queue));

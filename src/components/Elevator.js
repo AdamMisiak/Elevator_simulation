@@ -22,8 +22,7 @@ const Elevator = () => {
         },
     ]
     
-    let position = useSelector(state => state.position.position);
-    console.log(position)
+    let position = useSelector(state => state.position.height);
 
     function handleKeyPress(e){
         if (e.key === 'ArrowUp' && position > 2) {
