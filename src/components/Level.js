@@ -17,12 +17,12 @@ const Level = (object) => {
         // console.log(ref.current.getBoundingClientRect().top)
     }
 
-    // useEffect(()=>{
-    //     dispatch(saveLevelHeight({
-    //         level: object.id,
-    //         position: 100,
-    //     }));
-    // });
+    useEffect(()=>{
+        dispatch(saveLevelHeight({
+            level: object.id,
+            position: 100,
+        }));
+    });
 
     return(
         <div className="level-container">
