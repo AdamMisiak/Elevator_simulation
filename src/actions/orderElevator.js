@@ -6,10 +6,3 @@ export const orderElevator = (level) => {
         payload: level
     }
 }
-
-// export const orderElevator = (level, queue) => {
-//     return {
-//         type: ORDER_ELEVATOR,
-//         payload: level
-//     }
-// }

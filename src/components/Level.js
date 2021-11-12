@@ -1,21 +1,16 @@
 import '../styles/Level.css';
 
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect, useRef, useState } from 'react';
+
 import Button from './Button'
 import React from 'react';
-import { useRef } from 'react';
-
-// import { useDispatch, useSelector } from 'react-redux';
-// import { useEffect, useRef, useState } from 'react';
-
-
-
-
-// import { saveLevelHeight } from '../actions/saveLevelHeight';
+import { saveLevelHeight } from '../actions/saveLevelHeight';
 
 const Level = (object) => { 
-    // const dispatch = useDispatch();
-    // const [position, setPosition] = useState(0);
+    const dispatch = useDispatch();
     const ref = useRef(null)
+    // const [position, setPosition] = useState(0);
 
     if (ref.current !== null) {
         // setPosition(ref.current.getBoundingClientRect().top)
@@ -23,12 +18,10 @@ const Level = (object) => {
     }
 
     // useEffect(()=>{
-    //     // nadpisuje teraz levels - trzeba poprawic aby append bylo
     //     dispatch(saveLevelHeight({
     //         level: object.id,
     //         position: 100,
     //     }));
-    //     console.log(object.id)
     // });
 
     return(

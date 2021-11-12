@@ -4,11 +4,12 @@ import rootReducer from './reducers'
 import thunk from 'redux-thunk';
 
 const initialState = {
-    position: {
-        height: 100
+    elevator: {
+        position: 100,
+        queue: [],
     },
     levels: {
-        queue: []
+        positions: []
     },
 };
 

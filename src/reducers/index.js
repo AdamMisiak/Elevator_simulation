@@ -1,10 +1,12 @@
 import { combineReducers } from "redux";
+import elevatorReducer from './elevator';
 import orderElevatorReducer from './orderElevator';
+
 // import saveLevelHeightReducer from './saveLevelHeight';
-import savePositionReducer from './savePosition';
+
 
 export default combineReducers({
-    position: savePositionReducer,
+    elevator: elevatorReducer,
     // levels: saveLevelHeightReducer,
     levels: orderElevatorReducer,
 })

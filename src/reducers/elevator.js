@@ -4,15 +4,15 @@ const initialState = {
     height: 0,
 };
 
-const savePositionReducer = (state = initialState, action) => {
+const elevatorReducer = (state = initialState, action) => {
     switch (action.type) {
         case SAVE_POSITION:
             return {
                 ...state,
-                height: action.payload
+                position: action.payload
             }
         default:
             return state;
     }
 }
-export default savePositionReducer;
+export default elevatorReducer;
