@@ -4,7 +4,7 @@ const initialState = {
     levels: [],
 };
 
-const saveLevelHeightReducer = (state = initialState, action) => {
+const levelsReducer = (state = initialState, action) => {
     switch (action.type) {
         case SAVE_LEVEL_HEIGHT:
             return action.payload
@@ -12,4 +12,4 @@ const saveLevelHeightReducer = (state = initialState, action) => {
             return state;
     }
 }
-export default saveLevelHeightReducer;
+export default levelsReducer;

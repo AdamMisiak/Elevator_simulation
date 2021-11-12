@@ -1,7 +1,8 @@
-import { SAVE_POSITION } from '../actions/types';
+import { ORDER_ELEVATOR, SAVE_POSITION } from '../actions/types';
 
 const initialState = {
-    height: 0,
+    position: 0,
+    queue: [],
 };
 
 const elevatorReducer = (state = initialState, action) => {
@@ -10,6 +11,11 @@ const elevatorReducer = (state = initialState, action) => {
             return {
                 ...state,
                 position: action.payload
+            }
+        case ORDER_ELEVATOR:
+            return {
+                ...state,
+                queue: [...state.queue, action.payload]
             }
         default:
             return state;

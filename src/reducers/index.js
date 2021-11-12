@@ -1,12 +1,8 @@
 import { combineReducers } from "redux";
 import elevatorReducer from './elevator';
-import orderElevatorReducer from './orderElevator';
-
-// import saveLevelHeightReducer from './saveLevelHeight';
-
+import levelsReducer from './levels';
 
 export default combineReducers({
     elevator: elevatorReducer,
-    // levels: saveLevelHeightReducer,
-    levels: orderElevatorReducer,
+    levels: levelsReducer,
 })
