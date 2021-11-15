@@ -10,7 +10,7 @@ import { saveLevelHeight } from '../actions/saveLevelHeight';
 const Level = (object) => { 
     const dispatch = useDispatch();
     const ref = useRef(null)
-    // const [position, setPosition] = useState(0);
+    const [position, setPosition] = useState(0);
 
     if (ref.current !== null) {
         // setPosition(ref.current.getBoundingClientRect().top)
@@ -22,13 +22,13 @@ const Level = (object) => {
             level: object.id,
             position: 100,
         }));
-    });
+    }, []);
 
     return(
         <div className="level-container">
             <div ref={ref} className="level">
                 LEVEL: {object.id}
-                {/* <p>POSITION: {position}</p> */}
+                <p>POSITION: {position}</p>
                 <Button 
                     label="Order"
                     level={object.id}
