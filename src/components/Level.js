@@ -1,26 +1,22 @@
 import '../styles/Level.css';
 
-import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useRef, useState } from 'react';
 
 import Button from './Button'
 import React from 'react';
 import { saveLevelHeight } from '../actions/saveLevelHeight';
+import { useDispatch } from 'react-redux';
 
 const Level = (object) => { 
     const dispatch = useDispatch();
     const ref = useRef(null)
     const [position, setPosition] = useState(0);
 
-    if (ref.current !== null) {
-        // setPosition(ref.current.getBoundingClientRect().top)
-        // console.log(ref.current.getBoundingClientRect().top)
-    }
-
     useEffect(()=>{
+        setPosition(ref.current.getBoundingClientRect().top)
         dispatch(saveLevelHeight({
             level: object.id,
-            position: 100,
+            position: position,
         }));
     }, []);
 
