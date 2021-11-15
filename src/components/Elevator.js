@@ -21,6 +21,7 @@ const Elevator = () => {
             "id": 3,
         },
     ]
+    const margin = 1;
     
     let position = useSelector(state => state.elevator.position);
     let queue = useSelector(state => state.elevator.queue);
@@ -28,32 +29,30 @@ const Elevator = () => {
 
     function handleKeyPress(e){
         if (e.key === 'ArrowUp' && position > 2) {
-            position = position - 2;
+            position = position + 2
             dispatch(savePosition(position));
         }
         else if (e.key === 'ArrowDown') {
-            position = position + 2;
-            dispatch(savePosition(position));
-        }
-        else {
+            position = position - 2
             dispatch(savePosition(position));
         }
     }
 
     useEffect(()=>{
         document.addEventListener("keydown", handleKeyPress);
-    });
+    }, [document]);
 
     useEffect(() => {
-        console.log(levels[0])
-        console.log(queue)
-        if (queue[0] === 1 && position > levels[0].position) {
-            position = position - 2
+        if (queue[0] === 1 && position >= levels[2].position + margin) {
+            position = position - 1;
             dispatch(savePosition(position));
         }
-        else if (queue[0] === 1 && position < levels[0].position) {
-            position = position + 2
+        else if (queue[0] === 1 && position <= levels[2].position - margin) {
+            position = position + 1;
             dispatch(savePosition(position));
+        }
+        else if (queue[0] === 1 && position === levels[2].position) {
+            console.log('EQUAL')
         }
         // else if (position < 1000) {
         //     position = position + 2
@@ -63,7 +62,7 @@ const Elevator = () => {
     
     return(
         <div className="elevator-container">
-            <div ref={ref} className="elevator" style={{top : position+'px'}}>
+            <div ref={ref} className="elevator" style={{bottom : position+'px'}}>
                 ELEVATOR
                 <p>REDUX {position}</p>
             </div>
