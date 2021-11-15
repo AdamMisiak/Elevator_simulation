@@ -13,10 +13,11 @@ const Level = (object) => {
     const [position, setPosition] = useState(0);
 
     useEffect(()=>{
+        let tempPosition = ref.current.getBoundingClientRect().top
         setPosition(ref.current.getBoundingClientRect().top)
         dispatch(saveLevelHeight({
             level: object.id,
-            position: position,
+            position: tempPosition,
         }));
     }, []);
 

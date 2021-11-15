@@ -23,6 +23,8 @@ const Elevator = () => {
     ]
     
     let position = useSelector(state => state.elevator.position);
+    let queue = useSelector(state => state.elevator.queue);
+    let levels = useSelector(state => state.levels.positions);
 
     function handleKeyPress(e){
         if (e.key === 'ArrowUp' && position > 2) {
@@ -42,12 +44,17 @@ const Elevator = () => {
         document.addEventListener("keydown", handleKeyPress);
     });
 
-    useEffect(()=>{
-        // moving elevator will be here - if order is level 1 and position > level 1 => move down
-        // if (position > 0) {
-        //     position = position - 2
-        //     dispatch(savePosition(position));
-        // }
+    useEffect(() => {
+        console.log(levels[0])
+        console.log(queue)
+        if (queue[0] === 1 && position > levels[0].position) {
+            position = position - 2
+            dispatch(savePosition(position));
+        }
+        else if (queue[0] === 1 && position < levels[0].position) {
+            position = position + 2
+            dispatch(savePosition(position));
+        }
         // else if (position < 1000) {
         //     position = position + 2
         //     dispatch(savePosition(position));
