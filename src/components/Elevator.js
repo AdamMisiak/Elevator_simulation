@@ -5,6 +5,7 @@ import { useEffect, useRef } from 'react';
 
 import Level from './Level'
 import React from 'react';
+import { finishOrder } from '../actions/finishOrder';
 import { savePosition } from '../actions/savePosition';
 
 const Elevator = () => {
@@ -52,6 +53,7 @@ const Elevator = () => {
             dispatch(savePosition(position));
         }
         else if (queue[0] === 1 && position === levels[2].position) {
+            dispatch(finishOrder());
             console.log('EQUAL')
         }
         // else if (position < 1000) {

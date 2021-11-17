@@ -1,4 +1,4 @@
-import { ORDER_ELEVATOR, SAVE_POSITION } from '../actions/types';
+import { FINISH_ORDER, ORDER_ELEVATOR, SAVE_POSITION } from '../actions/types';
 
 const initialState = {
     position: 0,
@@ -16,6 +16,11 @@ const elevatorReducer = (state = initialState, action) => {
             return {
                 ...state,
                 queue: [...state.queue, action.payload]
+            }
+        case FINISH_ORDER:
+            return {
+                ...state,
+                queue: [...state.queue.slice(1, state.queue.length)]
             }
         default:
             return state;
