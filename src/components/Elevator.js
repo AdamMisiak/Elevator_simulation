@@ -13,13 +13,13 @@ const Elevator = () => {
     const ref = useRef(null)
     const levelsObjects = [
         {
-            "id": 1,
-        },
-        {
             "id": 2,
         },
         {
-            "id": 3,
+            "id": 1,
+        },
+        {
+            "id": 0,
         },
     ]
     const margin = 1;
@@ -44,22 +44,32 @@ const Elevator = () => {
     }, [document]);
 
     useEffect(() => {
-        if (queue[0] === 1 && position >= levels[2].position + margin) {
-            position = position - 1;
-            dispatch(savePosition(position));
+        // tutaj chyba kolejnosc jest zla - levles[0] to chyba najwyzszy poziom??
+        for (let i = 0; i < levels.length; i++) {
+            if (queue[0] === levels[i].level && position >= levels[2].position + margin) {
+                position = position - 1;
+                dispatch(savePosition(position));
+            }
+            else if (queue[0] === 1 && position <= levels[2].position - margin) {
+                position = position + 1;
+                dispatch(savePosition(position));
+            }
+            else if (queue[0] === 1 && position === levels[2].position) {
+                dispatch(finishOrder());
+            }
         }
-        else if (queue[0] === 1 && position <= levels[2].position - margin) {
-            position = position + 1;
-            dispatch(savePosition(position));
-        }
-        else if (queue[0] === 1 && position === levels[2].position) {
-            dispatch(finishOrder());
-            console.log('EQUAL')
-        }
-        // else if (position < 1000) {
-        //     position = position + 2
+        // if (queue[0] === 1 && position >= levels[2].position + margin) {
+        //     position = position - 1;
         //     dispatch(savePosition(position));
         // }
+        // else if (queue[0] === 1 && position <= levels[2].position - margin) {
+        //     position = position + 1;
+        //     dispatch(savePosition(position));
+        // }
+        // else if (queue[0] === 1 && position === levels[2].position) {
+        //     dispatch(finishOrder());
+        // }
+
     });
     
     return(
