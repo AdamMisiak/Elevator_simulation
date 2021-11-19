@@ -13,13 +13,13 @@ const Elevator = () => {
     const ref = useRef(null)
     const levelsObjects = [
         {
-            "id": 2,
+            "id": 0,
         },
         {
             "id": 1,
         },
         {
-            "id": 0,
+            "id": 2,
         },
     ]
     const margin = 1;
@@ -29,7 +29,7 @@ const Elevator = () => {
     let levels = useSelector(state => state.levels.positions);
 
     function handleKeyPress(e){
-        if (e.key === 'ArrowUp' && position > 2) {
+    if (e.key === 'ArrowUp' && position > 2) {
             position = position + 2
             dispatch(savePosition(position));
         }
@@ -45,18 +45,31 @@ const Elevator = () => {
 
     useEffect(() => {
         // tutaj chyba kolejnosc jest zla - levles[0] to chyba najwyzszy poziom??
-        for (let i = 0; i < levels.length; i++) {
-            if (queue[0] === levels[i].level && position >= levels[2].position + margin) {
-                position = position - 1;
-                dispatch(savePosition(position));
-            }
-            else if (queue[0] === 1 && position <= levels[2].position - margin) {
-                position = position + 1;
-                dispatch(savePosition(position));
-            }
-            else if (queue[0] === 1 && position === levels[2].position) {
-                dispatch(finishOrder());
-            }
+        // for (let i = 0; i < levels.length; i++) {
+        //     console.log(i, queue[0], levels[i].level)
+            // if (queue[0] === levels[i].level && position >= levels[2].position + margin) {
+            //     position = position - 1;
+            //     dispatch(savePosition(position));
+            // }
+            // else if (queue[0] === 1 && position <= levels[2].position - margin) {
+            //     position = position + 1;
+            //     dispatch(savePosition(position));
+            // }
+            // else if (queue[0] === 1 && position === levels[2].position) {
+            //     dispatch(finishOrder());
+            // }
+        // }
+        if (queue[0] === 0 && position >= levels[0].position + margin) {
+            position = position - 1;
+            dispatch(savePosition(position));
+        }
+        else if (queue[0] === 0 && position <= levels[0].position - margin) {
+            position = position + 1;
+            dispatch(savePosition(position));
+        }
+        else if (queue[0] === 0 && position === levels[0].position) {
+            dispatch(finishOrder());
+            // dispatch(savePosition(position));
         }
         // if (queue[0] === 1 && position >= levels[2].position + margin) {
         //     position = position - 1;
@@ -79,7 +92,7 @@ const Elevator = () => {
                 <p>REDUX {position}</p>
             </div>
             <div className="levels">
-                {levelsObjects.slice(0).reverse().map((object) => {
+                {levelsObjects.map((object) => {
                     return <Level key={object.id} {...object} />
                 })}
             </div>
