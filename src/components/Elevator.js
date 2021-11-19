@@ -21,6 +21,12 @@ const Elevator = () => {
         {
             "id": 2,
         },
+        {
+            "id": 3,
+        },
+        {
+            "id": 4,
+        },
     ]
     const margin = 1;
     
@@ -29,7 +35,7 @@ const Elevator = () => {
     let levels = useSelector(state => state.levels.positions);
 
     function handleKeyPress(e){
-    if (e.key === 'ArrowUp' && position > 2) {
+        if (e.key === 'ArrowUp' && position > 2) {
             position = position + 2
             dispatch(savePosition(position));
         }
@@ -45,13 +51,17 @@ const Elevator = () => {
 
     useEffect(() => {
         for (let i = 0; i < levels.length; i++) {
-            if (queue[0] === levels[i].level && position >= levels[i].position + margin) {
-                position = position - 1;
+            if (queue[0] === levels[i].level && position > levels[i].position) {
+                position = position - 0.5;
                 dispatch(savePosition(position));
+                // while (position >= levels[i].position + margin) {
+                // }
             }
-            else if (queue[0] === levels[i].level && position <= levels[i].position - margin) {
-                position = position + 1;
+            else if (queue[0] === levels[i].level && position < levels[i].position) {
+                position = position + 0.5;
                 dispatch(savePosition(position));
+                // while (position <= levels[i].position - margin) {
+                // }
             }
             else if (queue[0] === levels[i].level && position === levels[i].position) {
                 dispatch(finishOrder());
