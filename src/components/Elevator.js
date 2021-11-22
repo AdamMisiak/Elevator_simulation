@@ -1,7 +1,7 @@
 import '../styles/Elevator.css';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import Level from './Level'
 import React from 'react';
@@ -28,47 +28,43 @@ const Elevator = () => {
             "id": 4,
         },
     ]
-    const margin = 1;
-    
-    let position = useSelector(state => state.elevator.position);
+    const positionState = useSelector(state => state.elevator.position);
     let queue = useSelector(state => state.elevator.queue);
     let levels = useSelector(state => state.levels.positions);
 
+    const [position, setPosition] = useState(positionState);
+
     function handleKeyPress(e){
         if (e.key === 'ArrowUp' && position > 2) {
-            position = position + 2
-            dispatch(savePosition(position));
+            setPosition(position => position + 2)
         }
         else if (e.key === 'ArrowDown') {
-            position = position - 2
-            dispatch(savePosition(position));
+            setPosition(position => position - 2)
         }
     }
-
-    useEffect(()=>{
-        document.addEventListener("keydown", handleKeyPress);
-    }, [document]);
-
+    
     useEffect(() => {
         for (let i = 0; i < levels.length; i++) {
             if (queue[0] === levels[i].level && position > levels[i].position) {
-                position = position - 0.5;
-                dispatch(savePosition(position));
-                // while (position >= levels[i].position + margin) {
-                // }
+                setPosition(position => position - 0.5)
             }
             else if (queue[0] === levels[i].level && position < levels[i].position) {
-                position = position + 0.5;
-                dispatch(savePosition(position));
-                // while (position <= levels[i].position - margin) {
-                // }
+                setPosition(position => position + 0.5)
             }
             else if (queue[0] === levels[i].level && position === levels[i].position) {
                 dispatch(finishOrder());
             }
         }
     });
-    
+
+    useEffect(() => {
+        dispatch(savePosition(position));
+    }, [position]);
+
+    useEffect(() => {
+        document.addEventListener("keydown", handleKeyPress);
+    }, []);
+
     return(
         <div className="elevator-container">
             <div ref={ref} className="elevator" style={{bottom : position+'px'}}>
