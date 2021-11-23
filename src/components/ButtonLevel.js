@@ -4,7 +4,7 @@ import React from 'react';
 import { orderElevator } from '../actions/orderElevator';
 import { useDispatch } from 'react-redux';
 
-const Button = ({
+const ButtonLevel = ({
     label,
     level,
     side="right",
@@ -23,4 +23,4 @@ const Button = ({
     );
 }
 
-export default Button;
+export default ButtonLevel;
