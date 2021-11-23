@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import '../styles/Level.css';
 
 import { useEffect, useRef, useState } from 'react';
@@ -29,6 +31,7 @@ const Level = (object) => {
                 <Button 
                     label="Order"
                     level={object.id}
+                    side="right"
                 />
             </div>
         </div>

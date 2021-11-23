@@ -1,4 +1,11 @@
 .btn {
     position: absolute;
+}
+
+.left {
+    left: -80px;
+}
+
+.right {
     right: -80px;
 }

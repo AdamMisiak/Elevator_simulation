@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux';
 const Button = ({
     label,
     level,
+    side="right",
 }) => {
     const dispatch = useDispatch();
 
@@ -16,7 +17,7 @@ const Button = ({
 
     return(
     <button
-        className="btn btn-primary"
+        className={'btn btn-primary ' + side}
         onClick={HandleOrderElevator}>{label}
     </button>
     );

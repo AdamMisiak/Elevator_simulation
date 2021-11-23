@@ -1,8 +1,11 @@
+/* eslint-disable */
+
 import '../styles/Elevator.css';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useRef, useState } from 'react';
 
+import Button from './Button'
 import Level from './Level'
 import React from 'react';
 import { finishOrder } from '../actions/finishOrder';
@@ -70,6 +73,11 @@ const Elevator = () => {
             <div ref={ref} className="elevator" style={{bottom : position+'px'}}>
                 ELEVATOR
                 <p>REDUX {position}</p>
+                <Button 
+                    label="UP"
+                    side="left"
+                />
+
             </div>
             <div className="levels">
                 {levelsObjects.map((object) => {
