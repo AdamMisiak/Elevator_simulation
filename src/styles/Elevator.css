@@ -23,3 +23,11 @@
     position:absolute;
     left:2px;right:1px; 
 }
+
+.buttons-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: left;
+}

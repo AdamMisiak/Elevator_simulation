@@ -5,7 +5,7 @@ import '../styles/Elevator.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useRef, useState } from 'react';
 
-import ButtonLevel from './ButtonLevel'
+import ButtonElevator from './ButtonElevator'
 import Level from './Level'
 import React from 'react';
 import { finishOrder } from '../actions/finishOrder';
@@ -73,10 +73,18 @@ const Elevator = () => {
             <div ref={ref} className="elevator" style={{bottom : position+'px'}}>
                 ELEVATOR
                 <p>REDUX {position}</p>
-                <ButtonLevel 
-                    label="UP"
-                    side="left"
-                />
+                <div className="buttons-container">
+                    <ButtonElevator 
+                        label="1"
+                        level={1}
+                        side="left"
+                    />
+                    <ButtonElevator 
+                        label="2"
+                        level={2}
+                        side="left"
+                    />
+                </div>
 
             </div>
             <div className="levels">

@@ -2,6 +2,10 @@
     position: absolute;
 }
 
+.btn-elevator {
+    position:relative;
+}
+
 .left {
     left: -80px;
 }
