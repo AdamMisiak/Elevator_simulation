@@ -10,12 +10,13 @@ import { saveLevelHeight } from '../actions/saveLevelHeight';
 import { useDispatch } from 'react-redux';
 
 const Level = (object) => { 
+    const levelMargin = 2
     const dispatch = useDispatch();
     const ref = useRef(null)
     const [position, setPosition] = useState(0);
 
     useEffect(()=>{
-        let tempPosition = ref.current.offsetParent.getBoundingClientRect().bottom - ref.current.getBoundingClientRect().bottom
+        let tempPosition = ref.current.offsetParent.getBoundingClientRect().bottom - ref.current.getBoundingClientRect().bottom + levelMargin
         setPosition(tempPosition)
         dispatch(saveLevelHeight({
             level: object.id,
