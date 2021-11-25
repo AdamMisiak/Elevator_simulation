@@ -26,8 +26,9 @@
 
 .buttons-container {
     position: absolute;
+    top: 0;
     display: flex;
     flex-direction: column;
-    align-items: stretch;
-    justify-content: left;
+    /* align-items: stretch;
+    justify-content: left; */
 }

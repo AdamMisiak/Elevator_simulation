@@ -74,16 +74,9 @@ const Elevator = () => {
                 ELEVATOR
                 <p>REDUX {position}</p>
                 <div className="buttons-container">
-                    <ButtonElevator 
-                        label="1"
-                        level={1}
-                        side="left"
-                    />
-                    <ButtonElevator 
-                        label="2"
-                        level={2}
-                        side="left"
-                    />
+                    {levelsObjects.map((object) => {
+                        return <ButtonElevator key={object.id} label={object.id} level={object.id} side="left" />
+                    })}
                 </div>
 
             </div>
