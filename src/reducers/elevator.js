@@ -18,9 +18,15 @@ const elevatorReducer = (state = initialState, action) => {
                 queue: [...state.queue, action.payload]
             }
         case FINISH_ORDER:
-            return {
-                ...state,
-                queue: [...state.queue.slice(1, state.queue.length)]
+            if (action.payload === state.queue[0]) {
+                return {
+                    ...state,
+                    queue: [...state.queue.slice(1, state.queue.length)]
+                }
+            } else {
+                return {
+                    ...state,
+                }
             }
         default:
             return state;

@@ -55,10 +55,12 @@ const Elevator = () => {
                 setPosition(position => position + 0.25)
             }
             else if (queue[0] === levels[i].level && position === levels[i].position) {
-                dispatch(finishOrder());
+                setTimeout(() => {
+                    dispatch(finishOrder(queue[0]));
+                }, 2000)
             }
         }
-    });
+    }, [levels, queue, position, dispatch]);
 
     useEffect(() => {
         dispatch(savePosition(position));
