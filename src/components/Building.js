@@ -1,19 +1,39 @@
-// import '../styles/Building.css';
+import '../styles/Building.css';
 
-// import Elevator from './Elevator'
-// import Level from './Level'
-// import React from 'react';
+import Elevator from './Elevator'
+import Level from './Level'
+import React from 'react';
 
-// const Building = () => {
-//     return(
-//         <div className="building">
-//             TEST
-//             {/* <Elevator/>      */}
-//             {/* <Level/>      */}
-//             {/* <Level/> */}
-//         </div>
+const Building = () => {
+    const levelsObjects = [
+        {
+            "id": 0,
+        },
+        {
+            "id": 1,
+        },
+        {
+            "id": 2,
+        },
+        {
+            "id": 3,
+        },
+        {
+            "id": 4,
+        },
+    ]
+    return(
+        <div className="building">
+            <Elevator/>
+            {/* add levels to redux + dynamically change */}
+            {/* list of queue on page */}
+            <div className="levels">
+                {levelsObjects.map((object) => {
+                    return <Level key={object.id} {...object} />
+                })}
+            </div> 
+        </div>
+    )   
+}
 
-//     )   
-// }
-
-// export default Building;
+export default Building;
