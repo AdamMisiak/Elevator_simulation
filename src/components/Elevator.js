@@ -49,10 +49,10 @@ const Elevator = () => {
     useEffect(() => {
         for (let i = 0; i < levels.length; i++) {
             if (queue[0] === levels[i].level && position > levels[i].position) {
-                setPosition(position => position - 0.25)
+                setPosition(position => position - 0.5)
             }
             else if (queue[0] === levels[i].level && position < levels[i].position) {
-                setPosition(position => position + 0.25)
+                setPosition(position => position + 0.5)
             }
             else if (queue[0] === levels[i].level && position === levels[i].position) {
                 setTimeout(() => {
