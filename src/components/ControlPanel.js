@@ -9,7 +9,7 @@ const ControlPanel = () => {
         <div className="control-panel">
             <p>CONTROL PANEL</p>
             QUEUE: 
-            <ul>
+            <ul className="control-panel-queue">
                 {queue.map((level) => (
                     <li>{level}</li>
                 ))}

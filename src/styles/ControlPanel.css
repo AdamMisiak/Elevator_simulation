@@ -12,3 +12,14 @@
     max-height: 100%;
     /* overflow: auto; */
 }
+
+.control-panel-queue {
+    position: relative;
+    height: 135px;
+    margin: 0px 15px;
+    
+    text-align: right;
+    font-size: 18px;
+    box-sizing: content-box;
+    overflow: hidden;
+}
