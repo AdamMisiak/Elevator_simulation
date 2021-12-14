@@ -22,6 +22,8 @@
 
     position:absolute;
     left:2px;right:1px; 
+
+    background-size: 200px;
 }
 
 .buttons-container {

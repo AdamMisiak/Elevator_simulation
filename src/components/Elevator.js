@@ -8,6 +8,7 @@ import { useEffect, useRef, useState } from 'react';
 import ButtonElevator from './ButtonElevator'
 import Level from './Level'
 import React from 'react';
+import elevatorBackground from "../images/elevator.jpg";
 import { finishOrder } from '../actions/finishOrder';
 import { savePosition } from '../actions/savePosition';
 
@@ -72,9 +73,7 @@ const Elevator = () => {
 
     return(
         <div className="elevator-container">
-            <div ref={ref} className="elevator" style={{bottom : position+'px'}}>
-                ELEVATOR
-                <p>REDUX {position}</p>
+            <div ref={ref} className="elevator" style={{bottom : position+'px', backgroundImage: `url(${elevatorBackground})`}}>
                 <div className="buttons-container">
                     {levelsObjects.map((object) => {
                         return <ButtonElevator key={object.id} label={object.id} level={object.id} side="left" />
