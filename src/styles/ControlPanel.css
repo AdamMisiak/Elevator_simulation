@@ -1,7 +1,7 @@
 .control-panel {
     background: #ccc;
     width: 200px;
-    height: 200px;
+    height: 300px;
     z-index: 1;
 
     margin: auto;
@@ -15,7 +15,7 @@
 
 .control-panel-queue {
     position: relative;
-    height: 135px;
+    height: 215px;
     margin: 0px 15px;
     
     text-align: right;
