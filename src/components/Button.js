@@ -4,10 +4,10 @@ import React from 'react';
 import { orderElevator } from '../actions/orderElevator';
 import { useDispatch } from 'react-redux';
 
-const ButtonLevel = ({
+const Button = ({
     label,
     level,
-    side="right",
+    side,
 }) => {
     const dispatch = useDispatch();
 
@@ -17,10 +17,10 @@ const ButtonLevel = ({
 
     return(
     <button
-        className={'btn btn-absolute btn-primary ' + side}
+        className={'btn btn-primary ' + (side ? side: "")}
         onClick={HandleOrderElevator}>{label}
     </button>
     );
 }
 
-export default ButtonLevel;
+export default Button;

@@ -1,9 +1,9 @@
-.btn {
+.btn-absolute {
     position: absolute;
 }
 
 .btn-elevator {
-    position:relative;
+    position: relative;
 }
 
 .left {
