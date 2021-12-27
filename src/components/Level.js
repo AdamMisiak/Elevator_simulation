@@ -4,7 +4,7 @@ import '../styles/Level.css';
 
 import { useEffect, useRef, useState } from 'react';
 
-import ButtonLevel from './ButtonLevel'
+import Button from './Button'
 import React from 'react';
 import { saveLevelHeight } from '../actions/saveLevelHeight';
 import { useDispatch } from 'react-redux';
@@ -29,10 +29,11 @@ const Level = (object) => {
             <div ref={ref} className="level">
                 LEVEL: {object.id}
                 <p>POSITION: {position}</p>
-                <ButtonLevel 
+                <Button 
                     label="Order"
                     level={object.id}
                     side="right"
+                    absolute={true}
                 />
             </div>
         </div>
