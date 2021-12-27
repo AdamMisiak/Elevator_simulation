@@ -8,6 +8,8 @@ const Button = ({
     label,
     level,
     side,
+    elevator,
+    absolute,
 }) => {
     const dispatch = useDispatch();
 
@@ -17,7 +19,7 @@ const Button = ({
 
     return(
     <button
-        className={'btn btn-primary ' + (side ? side: "")}
+        className={'btn btn-primary ' + (elevator===true ? 'btn-elevator ' : '') + (absolute===true ? 'btn-absolute ' : '') + (side ? side : "")}
         onClick={HandleOrderElevator}>{label}
     </button>
     );

@@ -5,7 +5,7 @@ import '../styles/Elevator.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useRef, useState } from 'react';
 
-import ButtonElevator from './ButtonElevator'
+import Button from './Button'
 import Level from './Level'
 import React from 'react';
 import elevatorBackground from "../images/elevator.jpg";
@@ -76,7 +76,7 @@ const Elevator = () => {
             <div ref={ref} className="elevator" style={{bottom : position+'px', backgroundImage: `url(${elevatorBackground})`}}>
                 <div className="buttons-container">
                     {levelsObjects.map((object) => {
-                        return <ButtonElevator key={object.id} label={object.id} level={object.id} side="left" />
+                        return <Button key={object.id} label={object.id} level={object.id} side="left" elevator={true} />
                     })}
                 </div>
 

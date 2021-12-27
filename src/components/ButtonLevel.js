@@ -17,7 +17,7 @@ const ButtonLevel = ({
 
     return(
     <button
-        className={'btn btn-absolute btn-primary ' + side}
+        className={'btn btn-primary btn-absolute ' + side}
         onClick={HandleOrderElevator}>{label}
     </button>
     );
