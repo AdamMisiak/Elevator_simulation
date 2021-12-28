@@ -81,11 +81,6 @@ const Elevator = () => {
                 </div>
 
             </div>
-            {/* <div className="levels">
-                {levelsObjects.map((object) => {
-                    return <Level key={object.id} {...object} />
-                })}
-            </div> */}
         </div>
 
     )   
