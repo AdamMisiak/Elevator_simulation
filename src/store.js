@@ -5,7 +5,7 @@ import thunk from 'redux-thunk';
 
 const initialState = {
     elevator: {
-        position: 100,
+        position: 3,
         queue: [],
     },
     levels: {
