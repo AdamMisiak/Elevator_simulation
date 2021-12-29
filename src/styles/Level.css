@@ -15,7 +15,7 @@
 } */
 
 .levels {
-    height:100%;
+    height: 100%;
     display: flex;
     flex-direction: column-reverse;
     justify-content: flex-start;
@@ -33,4 +33,14 @@
     border-bottom: 3px solid rgb(20, 20, 20);
     border-left: 7px solid rgb(90, 90, 90);
     border-right: 7px solid rgb(90, 90, 90);
+}
+
+.level-control-panel {
+    position: absolute;
+    height: 150px;
+    width: 130px;
+    
+    right: -144px;
+
+    background-color: #ccc;
 }

@@ -27,14 +27,16 @@ const Level = (object) => {
     return(
         <div className="level-container">
             <div ref={ref} className="level">
-                LEVEL: {object.id}
-                <p>POSITION: {position}</p>
-                <Button 
-                    label="Order"
-                    level={object.id}
-                    side="right"
-                    absolute={true}
-                />
+                <div className="level-control-panel">
+                    LEVEL: {object.id}
+                    <p>POSITION: {position}</p>
+                    <Button 
+                        label="Order"
+                        level={object.id}
+                        // side="right"
+                        // absolute={true}
+                    />
+                </div>
             </div>
         </div>
 
