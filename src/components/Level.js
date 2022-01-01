@@ -17,7 +17,7 @@ const Level = (object) => {
 
     useEffect(()=>{
         let tempPosition = ref.current.offsetParent.getBoundingClientRect().bottom - ref.current.getBoundingClientRect().bottom + levelMargin
-        setPosition(tempPosition)
+        setPosition(Math.floor(tempPosition))
         dispatch(saveLevelHeight({
             level: object.id,
             position: tempPosition,
