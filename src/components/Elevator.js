@@ -46,6 +46,13 @@ const Elevator = () => {
             setPosition(position => position - 2)
         }
     }
+
+    function checkElevatorPositionWithMargin(position, levels){
+        if (position > levels[i].position - 0.1 && position < levels[i].position + 0.1) {
+            return true
+        }
+        return false
+    }
     
     useEffect(() => {
         for (let i = 0; i < levels.length; i++) {
@@ -55,8 +62,7 @@ const Elevator = () => {
             else if (queue[0] === levels[i].level && position < levels[i].position) {
                 setPosition(position => position + 0.5)
             }
-            // TODO: fix magic numbers 0.1 and maybe create function to check confitions 
-            else if (queue[0] === levels[i].level && position > levels[i].position - 0.1 && position < levels[i].position + 0.1) {
+            else if (queue[0] === levels[i].level && checkElevatorPositionWithMargin) {
                 setTimeout(() => {
                     dispatch(finishOrder(queue[0]));
                 }, 2000)
