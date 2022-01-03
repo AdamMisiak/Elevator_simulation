@@ -13,6 +13,11 @@
     /* overflow: auto; */
 }
 
+.control-panel-buttons {
+    display: flex;
+    justify-content: space-evenly
+}
+
 .control-panel-queue {
     position: relative;
     height: 115px;

@@ -12,12 +12,14 @@ const ControlPanel = () => {
             <p><b>CONTROL PANEL</b></p>
             <p>LEVELS: <b>{levels.length}</b></p>
             <div>
-                <p>
+                <p className="control-panel-buttons">
                 <Button 
                     label="Add"
+                    queue={true}
                 />
                 <Button 
                     label="Delete"
+                    queue={true}
                 />
                 </p>
             </div>
