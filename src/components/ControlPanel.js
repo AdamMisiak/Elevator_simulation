@@ -7,16 +7,20 @@ import { useSelector } from 'react-redux';
 const ControlPanel = () => {
     let queue = useSelector(state => state.elevator.queue);
     let levels = useSelector(state => state.levels.positions);
-    // refactor buttons to make it generic one
     return(
         <div className="control-panel">
-            <p>CONTROL PANEL</p>
-            <p>LEVELS: {levels.length}</p>
-            <p>
+            <p><b>CONTROL PANEL</b></p>
+            <p>LEVELS: <b>{levels.length}</b></p>
+            <div>
+                <p>
                 <Button 
-                    label="Add level"
+                    label="Add"
                 />
-            </p>
+                <Button 
+                    label="Delete"
+                />
+                </p>
+            </div>
             <p>
                 QUEUE:         
             </p>

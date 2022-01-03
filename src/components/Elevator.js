@@ -62,7 +62,7 @@ const Elevator = () => {
             else if (queue[0] === levels[i].level && position < levels[i].position) {
                 setPosition(position => position + 0.5)
             }
-            else if (queue[0] === levels[i].level && checkElevatorPositionWithMargin) {
+            else if (queue[0] === levels[i].level && checkElevatorPositionWithMargin(position, levels)) {
                 setTimeout(() => {
                     dispatch(finishOrder(queue[0]));
                 }, 2000)
