@@ -2,3 +2,4 @@ export const SAVE_POSITION = 'SAVE_POSITION';
 export const ORDER_ELEVATOR = 'ORDER_ELEVATOR';
 export const FINISH_ORDER = 'FINISH_ORDER';
 export const SAVE_LEVEL_HEIGHT = 'SAVE_LEVEL_HEIGHT';
+export const ADD_LEVEL = 'ADD_LEVEL';
