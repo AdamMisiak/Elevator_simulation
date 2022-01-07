@@ -1,6 +1,5 @@
 import '../styles/ControlPanel.css';
 
-import Button from './Button'
 import React from 'react';
 import { useSelector } from 'react-redux';
 
@@ -11,18 +10,6 @@ const ControlPanel = () => {
         <div className="control-panel">
             <p><b>CONTROL PANEL</b></p>
             <p>LEVELS: <b>{levels.length}</b></p>
-            <div>
-                <p className="control-panel-buttons">
-                <Button 
-                    label="Add"
-                    queue={true}
-                />
-                <Button 
-                    label="Delete"
-                    queue={true}
-                />
-                </p>
-            </div>
             <p>
                 QUEUE:         
             </p>

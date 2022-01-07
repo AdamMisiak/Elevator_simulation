@@ -10,7 +10,6 @@ const Button = ({
     side,
     elevator,
     absolute,
-    queue,
 }) => {
     const dispatch = useDispatch();
 
@@ -18,14 +17,10 @@ const Button = ({
         dispatch(orderElevator(level));
     }
 
-    function HandleAddLevel(e){
-        console.log('TEST')
-    }
-
     return(
     <button
         className={'btn btn-primary ' + (elevator===true ? 'btn-elevator ' : '') + (absolute===true ? 'btn-absolute ' : '') + (side ? side : "")}
-        onClick={(queue===true ? HandleAddLevel : HandleOrderElevator)}
+        onClick={HandleOrderElevator}
     >
             {label}
     </button>

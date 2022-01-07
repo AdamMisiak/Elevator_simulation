@@ -25,7 +25,6 @@ const Building = () => {
     return(
         <div className="building">
             <Elevator/>
-            {/* add levels to redux + dynamically change */}
             <div className="levels">
                 {levelsObjects.map((object) => {
                     return <Level key={object.id} {...object} />
