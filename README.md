@@ -3,7 +3,7 @@
 Application created to simulate a work of elevator. Elevator can be ordered or controlled with arrows.  Created with React.
 
 ## Demo
-![Alt Text](https://media.giphy.com/media/XBLBUYrBypcfbCCFON/giphy.gif)
+![Alt Text](https://media.giphy.com/media/UOhNy97ArOVLY0XhWX/giphy.gif)
 
 ## Table of contents
 * [Technologies](#technologies)
